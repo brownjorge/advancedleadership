@@ -10,16 +10,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/styles.css">
 <style>
-/* PATCH — v33 Summit cards: use the same --bg system as the original CSS */
+/* PATCH — v33 Summit cards: direct background-image fallback, no CSS variables */
 .summit-card-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:24px!important;}
-.summit-card{min-height:360px!important;position:relative!important;overflow:hidden!important;display:flex!important;align-items:flex-end!important;text-decoration:none!important;color:#fff!important;background:#0b1f3a!important;}
-.summit-card:before{content:""!important;position:absolute!important;inset:0!important;background:var(--bg) center center/cover no-repeat!important;opacity:1!important;filter:saturate(.95) contrast(1.04)!important;z-index:0!important;transition:.35s!important;}
-.summit-card:after{content:""!important;position:absolute!important;inset:0!important;background:linear-gradient(0deg,rgba(11,31,58,.92),rgba(11,31,58,.46) 55%,rgba(11,31,58,.12))!important;z-index:1!important;}
-.summit-card:hover:before{transform:scale(1.05)!important;}
+.summit-card{min-height:360px!important;position:relative!important;overflow:hidden!important;display:flex!important;align-items:flex-end!important;text-decoration:none!important;color:#fff!important;background-color:#0b1f3a!important;background-size:cover!important;background-position:center center!important;background-repeat:no-repeat!important;}
+.summit-card:before{content:""!important;position:absolute!important;inset:0!important;background:linear-gradient(0deg,rgba(11,31,58,.88),rgba(11,31,58,.44) 58%,rgba(11,31,58,.12))!important;z-index:1!important;transition:.35s!important;}
+.summit-card:after{display:none!important;}
+.summit-card:hover{transform:translateY(-2px)!important;}
 .summit-card-content{position:relative!important;z-index:2!important;padding:30px!important;color:#fff!important;}
 .summit-card .meta{color:#f5d07a!important;font-size:12px!important;letter-spacing:.15em!important;text-transform:uppercase!important;font-weight:800!important;margin-bottom:10px!important;}
 .summit-card h3{color:#fff!important;font-family:"Cormorant Garamond",Georgia,serif!important;font-size:38px!important;line-height:.98!important;margin:0 0 12px!important;font-weight:500!important;}
-.summit-card p{color:rgba(255,255,255,.86)!important;line-height:1.65!important;margin:0!important;}
+.summit-card p{color:rgba(255,255,255,.88)!important;line-height:1.65!important;margin:0!important;}
 .summit-card .city{margin-top:16px!important;font-size:12px!important;text-transform:uppercase!important;letter-spacing:.12em!important;color:#f5d07a!important;font-weight:700!important;}
 @media(max-width:900px){.summit-card-grid{grid-template-columns:1fr!important}.summit-card{min-height:320px!important}}
 </style>
@@ -94,55 +94,55 @@
     </div>
 
     <div class="summit-card-grid">
-      <a class="summit-card" href="summits/climate-cordoba-2025.html" style="--bg:url('assets/images/summit-cards/climate-summit-cordoba-2025.jpg');">
+      <a class="summit-card" href="summits/climate-cordoba-2025.html" style=\"background-image:linear-gradient(0deg, rgba(11,31,58,.88), rgba(11,31,58,.48) 58%, rgba(11,31,58,.18)), url('assets/images/summit-cards/climate-summit-cordoba-2025.jpg'); background-size:cover; background-position:center center; background-repeat:no-repeat;\">
         <div class="summit-card-content"><div class="meta">2025 · Córdoba, Argentina</div><h3>International Climate Summit: Latin American Commitment toward COP30</h3><p>The International Climate Summit gathered regional and international leaders in Córdoba to articulate a Latin American contribution to the global climate agenda ahead of COP30.</p><div class="city">Open summit profile</div></div>
       </a>
 
-      <a class="summit-card" href="summits/energy-transition-fortaleza.html" style="--bg:url('assets/images/summit-cards/energy-transition-fortaleza-2024.jpg');">
+      <a class="summit-card" href="summits/energy-transition-fortaleza.html" style=\"background-image:linear-gradient(0deg, rgba(11,31,58,.88), rgba(11,31,58,.48) 58%, rgba(11,31,58,.18)), url('assets/images/summit-cards/energy-transition-fortaleza-2024.jpg'); background-size:cover; background-position:center center; background-repeat:no-repeat;\">
         <div class="summit-card-content"><div class="meta">2024 · Fortaleza, Brazil</div><h3>World Summit on Energy Transition</h3><p>Convened in Fortaleza at the height of global debates on decarbonization, renewable energy and COP30 preparation, positioning Ceará as a global hub for energy transition and green hydrogen.</p><div class="city">Open summit profile</div></div>
       </a>
 
-      <a class="summit-card" href="summits/astrotourism-vicuna.html" style="--bg:url('assets/images/summit-cards/astrotourism-vicuna-2023.jpg');">
+      <a class="summit-card" href="summits/astrotourism-vicuna.html" style=\"background-image:linear-gradient(0deg, rgba(11,31,58,.88), rgba(11,31,58,.48) 58%, rgba(11,31,58,.18)), url('assets/images/summit-cards/astrotourism-vicuna-2023.jpg'); background-size:cover; background-position:center center; background-repeat:no-repeat;\">
         <div class="summit-card-content"><div class="meta">2023 · Vicuña / Valle de Elqui, Chile</div><h3>Astrotourism World Summit</h3><p>A platform connecting astronomy, sustainable tourism and territorial development in one of the world’s most emblematic destinations for sky observation.</p><div class="city">Open summit profile</div></div>
       </a>
 
-      <a class="summit-card" href="summits/sustentabilizando-james-cameron.html" style="--bg:url('assets/images/summit-cards/sustentabilizando-james-cameron-2023.jpg');">
+      <a class="summit-card" href="summits/sustentabilizando-james-cameron.html" style=\"background-image:linear-gradient(0deg, rgba(11,31,58,.88), rgba(11,31,58,.48) 58%, rgba(11,31,58,.18)), url('assets/images/summit-cards/sustentabilizando-james-cameron-2023.jpg'); background-size:cover; background-position:center center; background-repeat:no-repeat;\">
         <div class="summit-card-content"><div class="meta">2023 · Buenos Aires, Argentina</div><h3>Sustentabilizando with James Cameron</h3><p>A high-visibility sustainability conversation in Buenos Aires with one of the world’s most influential cultural figures.</p><div class="city">Open summit profile</div></div>
       </a>
 
-      <a class="summit-card" href="summits/randi-zuckerberg.html" style="--bg:url('assets/images/summit-cards/randi-zuckerberg-2022.jpg');">
+      <a class="summit-card" href="summits/randi-zuckerberg.html" style=\"background-image:linear-gradient(0deg, rgba(11,31,58,.88), rgba(11,31,58,.48) 58%, rgba(11,31,58,.18)), url('assets/images/summit-cards/randi-zuckerberg-2022.jpg'); background-size:cover; background-position:center center; background-repeat:no-repeat;\">
         <div class="summit-card-content"><div class="meta">2022 · Buenos Aires, Argentina</div><h3>The Future of Social Networks with Randi Zuckerberg</h3><p>A major public conversation around the future of technology, digital platforms and communication.</p><div class="city">Open summit profile</div></div>
       </a>
 
-      <a class="summit-card" href="summits/future-tourism-barcelona.html" style="--bg:url('assets/images/summit-cards/future-tourism-barcelona-2021.jpg');">
+      <a class="summit-card" href="summits/future-tourism-barcelona.html" style=\"background-image:linear-gradient(0deg, rgba(11,31,58,.88), rgba(11,31,58,.48) 58%, rgba(11,31,58,.18)), url('assets/images/summit-cards/future-tourism-barcelona-2021.jpg'); background-size:cover; background-position:center center; background-repeat:no-repeat;\">
         <div class="summit-card-content"><div class="meta">2021 · Barcelona, Spain</div><h3>Future of Tourism World Summit</h3><p>One of ALF’s most visible international platforms, convening global tourism leaders, public authorities and institutions at a critical moment for the sector.</p><div class="city">Open summit profile</div></div>
       </a>
 
-      <a class="summit-card" href="summits/future-politics-cascais.html" style="--bg:url('assets/images/summit-cards/future-politics-cascais-2021.jpg');">
+      <a class="summit-card" href="summits/future-politics-cascais.html" style=\"background-image:linear-gradient(0deg, rgba(11,31,58,.88), rgba(11,31,58,.48) 58%, rgba(11,31,58,.18)), url('assets/images/summit-cards/future-politics-cascais-2021.jpg'); background-size:cover; background-position:center center; background-repeat:no-repeat;\">
         <div class="summit-card-content"><div class="meta">2021 · Cascais, Portugal</div><h3>The Future of Politics Summit</h3><p>A high-level space to examine democratic leadership, political renewal and the future of governance after a period of global disruption.</p><div class="city">Open summit profile</div></div>
       </a>
 
-      <a class="summit-card" href="summits/circular-economy-cop25.html" style="--bg:url('assets/images/summit-cards/circular-economy-cop25-2020.jpg');">
+      <a class="summit-card" href="summits/circular-economy-cop25.html" style=\"background-image:linear-gradient(0deg, rgba(11,31,58,.88), rgba(11,31,58,.48) 58%, rgba(11,31,58,.18)), url('assets/images/summit-cards/circular-economy-cop25-2020.jpg'); background-size:cover; background-position:center center; background-repeat:no-repeat;\">
         <div class="summit-card-content"><div class="meta">2020 · Madrid, Spain</div><h3>2nd Circular Economy Summit at COP25</h3><p>A platform connecting circular economy and climate policy within the broader United Nations climate agenda hosted in Madrid.</p><div class="city">Open summit profile</div></div>
       </a>
 
-      <a class="summit-card" href="summits/orange-economy-medellin.html" style="--bg:url('assets/images/summit-cards/orange-economy-medellin-2019.jpg');">
+      <a class="summit-card" href="summits/orange-economy-medellin.html" style=\"background-image:linear-gradient(0deg, rgba(11,31,58,.88), rgba(11,31,58,.48) 58%, rgba(11,31,58,.18)), url('assets/images/summit-cards/orange-economy-medellin-2019.jpg'); background-size:cover; background-position:center center; background-repeat:no-repeat;\">
         <div class="summit-card-content"><div class="meta">2019 · Medellín, Colombia</div><h3>Orange Economy Summit</h3><p>A summit convening leaders of the creative economy, innovation, entrepreneurship and public policy to explore the economic and social value of culture and creativity.</p><div class="city">Open summit profile</div></div>
       </a>
 
-      <a class="summit-card" href="summits/climate-leadership-porto.html" style="--bg:url('assets/images/summit-cards/climate-leadership-porto-2018.jpg');">
+      <a class="summit-card" href="summits/climate-leadership-porto.html" style=\"background-image:linear-gradient(0deg, rgba(11,31,58,.88), rgba(11,31,58,.48) 58%, rgba(11,31,58,.18)), url('assets/images/summit-cards/climate-leadership-porto-2018.jpg'); background-size:cover; background-position:center center; background-repeat:no-repeat;\">
         <div class="summit-card-content"><div class="meta">2018 · Porto, Portugal</div><h3>Climate Change Leadership Summit</h3><p>An international platform addressing the impact of climate change on agriculture, wine and society, convening experts around pathways for adaptation and mitigation.</p><div class="city">Open summit profile</div></div>
       </a>
 
-      <a class="summit-card" href="summits/circular-economy-madrid.html" style="--bg:url('assets/images/summit-cards/circular-economy-madrid-2018.jpg');">
+      <a class="summit-card" href="summits/circular-economy-madrid.html" style=\"background-image:linear-gradient(0deg, rgba(11,31,58,.88), rgba(11,31,58,.48) 58%, rgba(11,31,58,.18)), url('assets/images/summit-cards/circular-economy-madrid-2018.jpg'); background-size:cover; background-position:center center; background-repeat:no-repeat;\">
         <div class="summit-card-content"><div class="meta">2018 · Madrid, Spain</div><h3>1st Circular Economy &amp; Innovation Summit</h3><p>One of ALF’s landmark platforms, gathering global leaders, Nobel Laureates, former heads of state, innovators and institutions around circular innovation.</p><div class="city">Open summit profile</div></div>
       </a>
 
-      <a class="summit-card" href="summits/green-economy-cordoba-2017.html" style="--bg:url('assets/images/summit-cards/green-economy-cordoba-2017.jpg');">
+      <a class="summit-card" href="summits/green-economy-cordoba-2017.html" style=\"background-image:linear-gradient(0deg, rgba(11,31,58,.88), rgba(11,31,58,.48) 58%, rgba(11,31,58,.18)), url('assets/images/summit-cards/green-economy-cordoba-2017.jpg'); background-size:cover; background-position:center center; background-repeat:no-repeat;\">
         <div class="summit-card-content"><div class="meta">2017 · Córdoba, Argentina</div><h3>2nd Green Economy Summit</h3><p>A platform that deepened ALF’s sustainability work in Argentina, bringing international leaders and experts into dialogue with local institutions.</p><div class="city">Open summit profile</div></div>
       </a>
 
-      <a class="summit-card" href="summits/green-economy-cordoba-2016.html" style="--bg:url('assets/images/summit-cards/green-economy-cordoba-2016.jpg');">
+      <a class="summit-card" href="summits/green-economy-cordoba-2016.html" style=\"background-image:linear-gradient(0deg, rgba(11,31,58,.88), rgba(11,31,58,.48) 58%, rgba(11,31,58,.18)), url('assets/images/summit-cards/green-economy-cordoba-2016.jpg'); background-size:cover; background-position:center center; background-repeat:no-repeat;\">
         <div class="summit-card-content"><div class="meta">2016 · Córdoba, Argentina</div><h3>1st Green Economy Summit: Consciousness and Action</h3><p>The beginning of ALF’s large-scale sustainability platforms in Córdoba, Argentina.</p><div class="city">Open summit profile</div></div>
       </a>
     </div>
