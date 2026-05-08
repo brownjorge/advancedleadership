@@ -576,39 +576,52 @@
 .summits-hero:before{opacity:.58!important;}
 
 
-/* PATCH v33 — Partner logos and direct Summits hero background */
-.partner-logo-grid{
-  display:grid;
-  grid-template-columns:repeat(5, minmax(120px, 1fr));
-  gap:18px;
-  align-items:stretch;
+/* v38 PATCH — robust direct background heroes + transparent partner logos */
+.page-hero.direct-bg{
+  background-color:#0b1f3a!important;
+  background-size:cover!important;
+  background-repeat:no-repeat!important;
+}
+.page-hero.direct-bg:before{display:none!important;}
+.page-hero.direct-bg:after{
+  background:linear-gradient(90deg,rgba(var(--tone-rgb,11,31,58),.96),rgba(var(--tone-rgb,11,31,58),.74) 48%,rgba(var(--tone-rgb,11,31,58),.26)),linear-gradient(0deg,rgba(11,31,58,.70),transparent 58%)!important;
+}
+.page-hero.summits-hero.direct-bg{background-position:center 35%!important;}
+.page-hero.missions-hero.direct-bg{background-position:center 45%!important;}
+.page-hero.training-hero.direct-bg{background-position:center center!important;}
+.page-hero.about-hero.direct-bg{background-position:center center!important;}
+.page-hero.contact-hero.direct-bg{background-position:center center!important;}
+.summit-card.direct-bg{
+  background-size:cover!important;
+  background-position:center center!important;
+  background-repeat:no-repeat!important;
+}
+.summit-card.direct-bg:before{display:none!important;}
+.partner-logo-strip{
+  display:grid!important;
+  grid-template-columns:repeat(5,minmax(120px,1fr));
+  gap:26px 34px;
+  align-items:center;
 }
 .partner-logo{
-  min-height:104px;
-  background:#fff;
-  border:1px solid rgba(11,31,58,.10);
-  box-shadow:0 10px 24px rgba(11,31,58,.055);
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  padding:0!important;
+  min-height:76px;
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:18px;
 }
 .partner-logo img{
-  display:block;
-  max-width:100%;
-  max-height:68px;
+  max-width:165px;
+  max-height:70px;
+  width:auto;
+  height:auto;
   object-fit:contain;
-  filter:saturate(.95) contrast(1.02);
+  filter:grayscale(100%) contrast(1.06);
+  opacity:.82;
+  transition:.2s ease;
 }
-.page-hero.summits-hero{
-  background-size:cover !important;
-  background-position:center center !important;
-  background-repeat:no-repeat !important;
-}
-.page-hero.summits-hero:before{
-  display:none !important;
-}
-.page-hero.summits-hero:after{
-  background:linear-gradient(90deg,rgba(11,31,58,.88),rgba(11,31,58,.55) 52%,rgba(11,31,58,.22)),linear-gradient(0deg,rgba(11,31,58,.52),transparent 60%) !important;
-}
-@media(max-width:900px){.partner-logo-grid{grid-template-columns:repeat(2,1fr)}.partner-logo{min-height:88px}.partner-logo img{max-height:58px}}
+.partner-logo:hover img{filter:none;opacity:1;transform:translateY(-1px);}
+@media(max-width:900px){.partner-logo-strip{grid-template-columns:repeat(2,1fr);gap:22px}.partner-logo img{max-width:140px;}}
