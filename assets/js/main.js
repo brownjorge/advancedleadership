@@ -1,1 +1,0 @@
-document.addEventListener('click',e=>{if(e.target.closest('.menu')) document.querySelector('.links').style.display=document.querySelector('.links').style.display==='flex'?'none':'flex';});

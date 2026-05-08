@@ -574,3 +574,41 @@
 .pillar-card:before,.pillar-card:after{z-index:1;}
 .pillar-content{z-index:2;}
 .summits-hero:before{opacity:.58!important;}
+
+
+/* PATCH v33 — Partner logos and direct Summits hero background */
+.partner-logo-grid{
+  display:grid;
+  grid-template-columns:repeat(5, minmax(120px, 1fr));
+  gap:18px;
+  align-items:stretch;
+}
+.partner-logo{
+  min-height:104px;
+  background:#fff;
+  border:1px solid rgba(11,31,58,.10);
+  box-shadow:0 10px 24px rgba(11,31,58,.055);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+}
+.partner-logo img{
+  display:block;
+  max-width:100%;
+  max-height:68px;
+  object-fit:contain;
+  filter:saturate(.95) contrast(1.02);
+}
+.page-hero.summits-hero{
+  background-size:cover !important;
+  background-position:center center !important;
+  background-repeat:no-repeat !important;
+}
+.page-hero.summits-hero:before{
+  display:none !important;
+}
+.page-hero.summits-hero:after{
+  background:linear-gradient(90deg,rgba(11,31,58,.88),rgba(11,31,58,.55) 52%,rgba(11,31,58,.22)),linear-gradient(0deg,rgba(11,31,58,.52),transparent 60%) !important;
+}
+@media(max-width:900px){.partner-logo-grid{grid-template-columns:repeat(2,1fr)}.partner-logo{min-height:88px}.partner-logo img{max-height:58px}}
