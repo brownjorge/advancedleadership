@@ -1,0 +1,8 @@
+
+/* Summit card image patch: direct <img> backgrounds, independent of CSS variables */
+.summit-card{position:relative!important;overflow:hidden!important;background:#0b1f3a!important;}
+.summit-card::before{display:none!important;background:none!important;}
+.summit-card .summit-card-bg{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center center!important;z-index:0!important;display:block!important;filter:saturate(.96) contrast(1.03)!important;transition:transform .35s ease!important;}
+.summit-card::after{content:""!important;position:absolute!important;inset:0!important;z-index:1!important;background:linear-gradient(0deg,rgba(11,31,58,.92),rgba(11,31,58,.56) 48%,rgba(11,31,58,.18)),linear-gradient(90deg,rgba(11,31,58,.46),rgba(11,31,58,.12))!important;}
+.summit-card:hover .summit-card-bg{transform:scale(1.05)!important;}
+.summit-card-content{position:relative!important;z-index:2!important;}
