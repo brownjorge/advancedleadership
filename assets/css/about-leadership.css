@@ -1,0 +1,28 @@
+
+/* ABOUT SECTION COMPLETE PATCH — Leadership cards and direct hero fallback */
+.page-hero.about-hero {
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-color: #0b1f3a;
+}
+.leadership-about-section{
+  background: radial-gradient(circle at top left, rgba(200,151,42,.14), transparent 32%), linear-gradient(180deg,#fbf8f1,#f4efe4);
+}
+.leadership-about-intro{margin-bottom:34px;}
+.leadership-about-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;}
+.alf-leader-card{position:relative;min-height:410px;overflow:hidden;background:#0b1f3a;box-shadow:0 24px 58px rgba(11,31,58,.15);isolation:isolate;}
+.alf-leader-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .58s ease,filter .58s ease;z-index:0;}
+.alf-leader-card::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(11,31,58,.96) 0%,rgba(11,31,58,.66) 40%,rgba(11,31,58,.08) 76%),linear-gradient(135deg,rgba(200,151,42,.18),transparent 46%);}
+.alf-leader-info{position:absolute;left:20px;right:20px;bottom:20px;z-index:2;color:white;transition:.32s;}
+.alf-leader-role{color:#e8b84b;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;font-weight:800;margin-bottom:10px;}
+.alf-leader-info h3{font-family:"Cormorant Garamond",serif;font-size:1.95rem;line-height:.98;font-weight:500;margin:0;}
+.alf-leader-bio{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;justify-content:flex-end;padding:24px;color:white;background:linear-gradient(180deg,rgba(11,31,58,.76),rgba(11,31,58,.97)),radial-gradient(circle at bottom right,rgba(200,151,42,.22),transparent 44%);opacity:0;transform:translateY(12px);transition:.35s;}
+.alf-leader-bio h4{font-family:"Cormorant Garamond",serif;font-size:1.9rem;line-height:1;font-weight:500;margin:0 0 14px 0;}
+.alf-leader-bio p{color:rgba(255,255,255,.86);font-size:.9rem;line-height:1.62;margin:0;}
+.alf-leader-card:hover img{transform:scale(1.06);filter:saturate(.92) contrast(1.04);}
+.alf-leader-card:hover .alf-leader-info{opacity:0;transform:translateY(12px);}
+.alf-leader-card:hover .alf-leader-bio{opacity:1;transform:translateY(0);}
+@media(max-width:1100px){.leadership-about-grid{grid-template-columns:repeat(3,minmax(0,1fr));}}
+@media(max-width:820px){.leadership-about-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.alf-leader-card{min-height:380px;}}
+@media(max-width:560px){.leadership-about-grid{grid-template-columns:1fr;}.alf-leader-card{min-height:370px;}}
