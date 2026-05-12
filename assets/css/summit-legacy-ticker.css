@@ -1,0 +1,108 @@
+/* PATCH — Summit legacy logo ticker */
+.summit-logo-ticker {
+  margin: 34px 0 34px;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(200,151,42,.16), transparent 26%),
+    radial-gradient(circle at 90% 100%, rgba(200,151,42,.10), transparent 30%),
+    rgba(255,255,255,.60);
+  border: 1px solid rgba(200,151,42,.23);
+  box-shadow: 0 22px 58px rgba(11,31,58,.07);
+}
+
+.summit-logo-head {
+  display: grid;
+  grid-template-columns: .75fr 1.25fr;
+  gap: 28px;
+  align-items: end;
+  padding: 24px 30px 18px;
+  border-bottom: 1px solid rgba(200,151,42,.20);
+}
+
+.summit-logo-head p {
+  margin: 0;
+  color: rgba(16,32,51,.68);
+  line-height: 1.55;
+  font-size: .94rem;
+}
+
+.summit-logo-window {
+  overflow: hidden;
+  background: rgba(249,246,240,.50);
+}
+
+.summit-logo-track {
+  display: flex;
+  align-items: stretch;
+  width: max-content;
+  animation: summitLogoTicker 58s linear infinite;
+}
+
+.summit-logo-window:hover .summit-logo-track {
+  animation-play-state: paused;
+}
+
+.summit-logo-item {
+  display: grid;
+  grid-template-columns: 78px 250px;
+  align-items: center;
+  gap: 14px;
+  min-width: 356px;
+  padding: 22px 26px;
+  text-decoration: none;
+  border-right: 1px solid rgba(200,151,42,.22);
+  color: #0b1f3a;
+  transition: background .25s ease, transform .25s ease;
+}
+
+.summit-logo-item:hover {
+  background: rgba(255,255,255,.58);
+}
+
+.summit-logo-year {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.55rem;
+  line-height: .9;
+  color: #c8972a;
+  font-weight: 600;
+  letter-spacing: -.03em;
+}
+
+.summit-logo-item img {
+  display: block;
+  max-width: 250px;
+  max-height: 88px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: saturate(.95) contrast(1.04);
+}
+
+@keyframes summitLogoTicker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (max-width: 780px) {
+  .summit-logo-head {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 22px;
+  }
+
+  .summit-logo-item {
+    grid-template-columns: 62px 210px;
+    min-width: 300px;
+    padding: 18px 20px;
+  }
+
+  .summit-logo-year {
+    font-size: 2rem;
+  }
+
+  .summit-logo-item img {
+    max-width: 210px;
+    max-height: 74px;
+  }
+}
